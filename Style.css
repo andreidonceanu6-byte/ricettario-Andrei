@@ -1,0 +1,196 @@
+/* --- CSS Completo per lo Stile Moderno e Responsive (Senza regole immagine) --- */
+
+/* Stile Generale Moderno e Pulito */
+
+:root {
+    /* Definizione di variabili per colori e font */
+    --colore-principale: #333; /* Grigio scuro per il testo */
+    --colore-sfondo: #f8f8f8; /* Sfondo molto chiaro */
+    --colore-accento: #a34b22; /* Tonalità di rosso mattone/arancione per dettagli */
+    --font-principale: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-principale);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--colore-sfondo);
+    color: var(--colore-principale);
+}
+
+main {
+    max-width: 800px; /* Limite massimo per desktop */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px;
+}
+
+h1, h2 {
+    color: var(--colore-accento);
+    border-bottom: 2px solid rgba(163, 75, 34, 0.2); 
+    padding-bottom: 5px;
+}
+
+/* Stile per sezioni e liste */
+
+section {
+    margin-bottom: 30px;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+strong {
+    font-weight: 600; 
+}
+
+/* Stile del FOOTER */
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+    background-color: var(--colore-principale);
+    color: white;
+    font-size: 0.9em;
+}
+
+
+/* --- Menu a Tendina (Dropdown) --- */
+
+header {
+    background-color: var(--colore-principale);
+    color: white;
+    padding: 15px 20px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+}
+
+header h1 {
+    color: white;
+    border-bottom: none;
+    margin: 0;
+}
+
+/* Contenitore del Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Bottone del Menu */
+.dropbtn {
+    background-color: var(--colore-accento);
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #7b381a; 
+}
+
+/* Contenuto del Menu a tendina (nascosto di default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1; 
+    border-radius: 4px;
+    margin-top: 5px; 
+}
+
+/* Link all'interno del menu a tendina */
+.dropdown-content a {
+    color: var(--colore-principale);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Mostra il menu a tendina al passaggio del mouse sul contenitore .dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* --- OTTIMIZZAZIONE TABLET (601px - 992px) --- */
+@media (min-width: 601px) and (max-width: 992px) {
+    main {
+        max-width: 90%; 
+        margin: 20px auto; 
+    }
+    header h1 {
+        font-size: 2.8em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    p, ul, ol {
+        font-size: 1.1em;
+    }
+    header {
+        padding: 20px 30px;
+    }
+    .dropbtn {
+        padding: 12px 18px;
+        font-size: 18px;
+    }
+}
+
+
+/* --- OTTIMIZZAZIONE MOBILE (sotto 600px) --- */
+@media (max-width: 600px) {
+    main {
+        margin: 0;
+        padding: 10px;
+        box-shadow: none; 
+        border-radius: 0;
+    }
+    header {
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 10px;
+    }
+    header h1 {
+        font-size: 1.8em; 
+        margin-top: 10px; 
+        text-align: left;
+    }
+    .dropbtn {
+        width: 100%; 
+        text-align: left;
+    }
+    .dropdown {
+        width: 100%;
+    }
+    .dropdown-content {
+        min-width: 100%; 
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+    p, ul, ol {
+        font-size: 1em;
+    }
+}
